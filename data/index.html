@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ledder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"\>
+    <link rel="icon" type="image/png" href="ledder.png">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jscolor.min.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <h1>Ledder</h1>
+    </div>
+    <h2>Configuraciones</h2>
+    <div class="container">
+        <div class="row">
+            <h3>Seleccionar color</h3>
+        </div>
+        <a class="btn btn-primary btn-lg" href="#" id="change_color" role="button">Cambiar color</a>
+        <input class="jscolor {onFineChange:'update(this)'}" id="rgb">
+    </div>
+    <script>function update(picker) {
+            document.getElementById('rgb').innerHTML = Math.round(picker.rgb[0]) + ', ' + Math.round(picker.rgb[1]) + ', ' + Math.round(picker.rgb[2]);
+            document.getElementById("change_color").href="?r" + Math.round(picker.rgb[0]) + "g" +  Math.round(picker.rgb[1]) + "b" + Math.round(picker.rgb[2]) + "&";}</script>
+</body>
+
+</html>
